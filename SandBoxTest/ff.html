@@ -1,0 +1,171 @@
+<html>
+<body>
+
+
+<canvas id="myCanvas" width="1024" height="500"
+style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", init, false);
+
+      function init()
+      {
+        var canvas = document.getElementById("myCanvas");
+        canvas.addEventListener("mousedown", getPosition, false);
+      }
+
+      function getPosition(event)
+      {
+        var x = new Number();
+        var y = new Number();
+        var canvas = document.getElementById("myCanvas");
+
+        if (event.x != undefined && event.y != undefined)
+        {
+          x = event.x;
+          y = event.y;
+        }
+        else // Firefox method to get the position
+        {
+          x = event.clientX + document.body.scrollLeft +
+              document.documentElement.scrollLeft;
+          y = event.clientY + document.body.scrollTop +
+              document.documentElement.scrollTop;
+        }
+
+        x -= canvas.offsetLeft;
+        y -= canvas.offsetTop;
+
+       // console.log("x: " + x + "  y: " + y);
+if(10<x && y>11)
+{
+if(x<80 && y<30)console.log("0");
+
+}
+      }
+
+
+
+window.onload = function() {
+    var canvas = document.getElementById("myCanvas");
+
+    	var t0 = canvas.getContext("2d");
+	var t1 = canvas.getContext("2d");
+	var t2 = canvas.getContext("2d");
+	var t3 = canvas.getContext("2d");
+	var t4 = canvas.getContext("2d");
+	var t5 = canvas.getContext("2d");
+	var t6 = canvas.getContext("2d");
+	var t7 = canvas.getContext("2d");
+	var t8 = canvas.getContext("2d");
+	var t9 = canvas.getContext("2d");
+	var t10 = canvas.getContext("2d");
+	var t11 = canvas.getContext("2d");
+	var t12 = canvas.getContext("2d");
+	var t13 = canvas.getContext("2d");
+	var t14 = canvas.getContext("2d");
+	var t15 = canvas.getContext("2d");
+	var t16 = canvas.getContext("2d");
+	var t17 = canvas.getContext("2d");
+	var t18 = canvas.getContext("2d");
+	var t19 = canvas.getContext("2d");
+	var t20 = canvas.getContext("2d");
+	var t21 = canvas.getContext("2d");
+	var t21 = canvas.getContext("2d");
+	var t22 = canvas.getContext("2d");
+	var t23 = canvas.getContext("2d");
+	var t24 = canvas.getContext("2d");
+
+
+
+
+	t0.fillStyle= "#00ff00";
+	t1.fillStyle= "#00ff00";
+	t2.fillStyle= "#00ff00";
+	t3.fillStyle= "#00ff00";
+	t4.fillStyle= "#00ff00";
+	t5.fillStyle= "#00ff00";
+	t6.fillStyle= "#00ff00";
+	t7.fillStyle= "#00ff00";
+	t8.fillStyle= "#00ff00";
+	t9.fillStyle= "#00ff00";
+	t10.fillStyle= "#00ff00";
+	t11.fillStyle= "#00ff00";
+	t12.fillStyle= "#00ff00";
+	t13.fillStyle= "#00ff00";
+	t14.fillStyle= "#00ff00";
+	t15.fillStyle= "#00ff00";
+	t16.fillStyle= "#00ff00";
+	t17.fillStyle= "#00ff00";
+	t18.fillStyle= "#00ff00";
+	t19.fillStyle= "#00ff00";
+	t20.fillStyle= "#00ff00";
+	t21.fillStyle= "#00ff00";
+	t22.fillStyle= "#00ff00";
+	t23.fillStyle= "#00ff00";
+	t24.fillStyle= "#00ff00";
+
+	// firts num 
+	t0.fillRect(10,10,70,20);//0
+	t1.fillRect(10,31,20,70);//1
+	t2.fillRect(60,31,20,70);//2
+	t3.fillRect(10,103,70,20);//3
+	t4.fillRect(10,125,20,70);//4
+	t5.fillRect(60,125,20,70);//5
+	t6.fillRect(10,197,70,20);//6
+//plus sign
+
+t7.fillRect(130,103,70,20);
+t8.fillRect(155,80,20,70);
+
+//num plus
+	t9.fillRect(250,10,70,20);//0
+	t10.fillRect(250,31,20,70);//1
+	t11.fillRect(300,31,20,70);//2
+	t12.fillRect(250,103,70,20);//3
+	t13.fillRect(250,125,20,70);//4
+	t14.fillRect(300,125,20,70);//5
+	t15.fillRect(250,197,70,20);//6
+
+//equal sign
+
+t16.fillRect(350,103,70,20);
+t17.fillRect(350,130,70,20);
+
+//num after equal
+
+	t18.fillRect(450,10,70,20);//0
+	t19.fillRect(450,31,20,70);//1
+	t20.fillRect(500,31,20,70);//2
+	t21.fillRect(450,103,70,20);//3
+	t22.fillRect(450,125,20,70);//4
+	t23.fillRect(500,125,20,70);//5
+	t24.fillRect(450,197,70,20);//6
+
+
+
+///////////////////////////
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+var image = document.getElementById("source");
+
+ctx.drawImage(image,50, 71, 104, 124, 21, 20, 87, 104);
+
+
+   
+};
+</script>
+
+
+
+
+<div style="display:none;">
+  <img id="source" src="match-stick-standing-up-1.png"
+       width="300" height="227">
+</div>
+</body>
+</html>
+
