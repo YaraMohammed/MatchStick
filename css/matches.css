@@ -1,0 +1,113 @@
+.strickimgs{
+  opacity: 0.2;
+  position: relative;
+}
+.view{
+  opacity:1 !important;
+}
+div{
+  position: absolute;
+  left:10%;
+  top:20%;
+}
+#img0{
+  left: 0%;
+}
+#img1{
+  left: -1.7%;
+  top: 110px;
+}
+#img2{
+  left: 3.5%;
+  top: 0px;
+}
+#img3{
+  left: 1.8%;
+  top: 112px;
+}
+#img4{
+  left: 13%;
+  top: 63px;
+}
+#img5{
+  left: 25%;
+  top: 0px;
+}
+#img6{
+  left: 23.3%;
+  top: 114px;
+}
+#img7{
+  left: 28.6%;
+  top: 0%;
+}
+#img8{
+  left: 27%;
+  top: 115px;
+}
+#img9{
+  left: 61%;
+  top: 0px;
+}
+#img10{
+  left: 59.5%;
+  top: 114px;
+}
+#img11{
+  left: 65%;
+  top: 0px;
+}
+#img12{
+  left: 63.4%;
+  top: 113px;
+}
+
+#img16{
+  left:-21%;
+  top: 5px;
+}
+#img17{
+  left: -28.7%;
+  bottom: 107px;
+}
+#img18{
+  left: -36.7%;
+  top: 116px;
+}
+#img19{
+  left: -28%;
+  top: 9px;
+}
+#img20{
+  left: -19%;
+  top: 10px;
+}
+#img21{
+  left: -26.8%;
+  top: -104px;
+}
+#img22{
+  left: -34.6%;
+  top: 119px;
+}
+#img23{
+  left: -22%;
+  top: -16px;
+}
+#img24{
+  left: -29.7%;
+  top: 50px;
+}
+#img25{
+  left: -15%;
+  top: 10px;
+}
+#img26 {
+    left: 77%;
+    top: -127px;
+}
+#img27{
+  left: 69%;
+  top: 96px;
+}
+
