@@ -4,11 +4,12 @@
 }
 .view{
   opacity:1 !important;
+  position: relative;
 }
 div{
   position: absolute;
   left:10%;
-  top:20%;
+  top:35%;
 }
 #img0{
   left: 0%;
@@ -19,7 +20,7 @@ div{
 }
 #img2{
   left: 3.5%;
-  top: 0px;
+  top: 0%;
 }
 #img3{
   left: 1.8%;
@@ -31,7 +32,7 @@ div{
 }
 #img5{
   left: 25%;
-  top: 0px;
+  top: 0%;
 }
 #img6{
   left: 23.3%;
