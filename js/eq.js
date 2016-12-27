@@ -1,26 +1,25 @@
 divequation();
 draw_equation(7,"+",0,6);
 var im = document.getElementsByClassName("strickimgs");
-var existim0 = false;
 
-//Add viewing to matchstick
-for(var i=0;i<im.length;i++)
-{
-  im[i].addEventListener("click",function(e){
-    e.target.classList.toggle('view');
-  });
-}
+////Add viewing to matchstick
+//for(var i=0;i<im.length;i++)
+//{
+//  im[i].addEventListener("click",function(e){
+//    e.target.classList.toggle('view');
+//  });
+//}
 
 //Create Images in div
 function divequation(){
 var div = document.getElementById("divequation");
 for(var i=0 ; i<13 ; i++)
 {
-    div.innerHTML+='<img src="images/vertical.png" alt="" id=img'+i+' class ="strickimgs">'
+    div.innerHTML+='<img src="images/vertical.png" alt="" id=img'+i+' class ="strickimgs">';
 }
 for(var i=16 ; i<28 ; i++)
 {
-    div.innerHTML+='<img src="images/horizontal.png" alt="" id=img'+i+' class ="strickimgs">'
+    div.innerHTML+='<img src="images/horizontal.png" alt="" id=img'+i+' class ="strickimgs">';
 }
 }
 
@@ -31,6 +30,7 @@ function draw_equation(f,op,s,r)
 	var first = set_number(f,"first");
 	var sec = set_number(s,"sec");
 	var res = set_number(r,"res");
+  
 	//first operand
 	for(i=0;i<first.length;i++)
 	{
@@ -38,13 +38,13 @@ function draw_equation(f,op,s,r)
 		image.classList.add('view');
 	}
 	//second operand
-		for(i=0;i<sec.length;i++)
+	for(i=0;i<sec.length;i++)
 	{
 		var image = document.getElementById("img"+sec[i]);
 		image.classList.add('view');
 	}
 	//result
-		for(i=0;i<res.length;i++)
+	for(i=0;i<res.length;i++)
 	{
 		var image = document.getElementById("img"+res[i]);
 		image.classList.add('view');
@@ -114,3 +114,39 @@ function set_number(num,pos){
 			console.log("error getting IDs for number " +num+ "in " +pos);
 	}
 }
+
+
+//restrickt player moves
+function display_mode(mode)
+{
+  switch(mode)
+  {
+    //in add mode restrict removing any stick
+    case "add":
+     for(var i=0;i<im.length;i++)
+     {
+        if(!im[i].classList.contains('view'))
+        {
+          im[i].addEventListener("click",function(e){
+            e.target.classList.toggle('view');
+       });
+        }
+     }
+      break;
+    //in remove mode restrict adding any stick
+    case "remove":
+    for(var i=0;i<im.length;i++)
+    {
+      if(im[i].classList.contains('view'))
+      {
+      im[i].addEventListener("click",function(e){
+      e.target.classList.toggle('view');
+      });
+      }
+    }
+      break;
+  }
+}
+
+//display_mode('remove');
+
