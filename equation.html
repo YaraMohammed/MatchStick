@@ -4,21 +4,36 @@
     <meta charset="utf-8">
     <title>MatchStick</title>
     <link rel="stylesheet" type="text/css" href="css/matches.css">
-    <!-- /*
-    <style>
-#img0 {
-    opacity: 0.2;
-
-}
-</style>
-*/ -->
+      <link rel="stylesheet" type="text/css" href="css/thegamestyle.css">
   </head>
-  <body>
+<body background="images/greenbackground.jpg">
+     <div class="topleft">
+      <img  id ="player-img" src="images/mike-levels/mike-level2.ico" alt="Norway" width="100" height="100">
+      <p id="player-name">player name</p>
+  </div>
+    
+  <div class="topright">
+      <img  id ="levels-img" src="images/levels/level1.png" alt="Norway" width="100" height="100">
+  </div>  
+    
+    
+    
+ <div class="topcenter" >
+      <img  id ="time-img" src="images/time.png" alt="Norway" width="100" height="100">
+    <p id="timer">0:0:0</p>
+     <form  id="reload" onclick="reloading()">
+  <input type="image" src="images/reload.png" alt="Submit">
+</form>
+ </div> 
+
+    
 <div id = "divequation">
     
 </div>
 
 <script type="text/javascript" src="js/eq.js"></script>
+    <script src="js/thegamejs.js"></script>
+
 
   </body>
 </html>
