@@ -1,14 +1,6 @@
 divequation();
-draw_equation(7,"+",0,6);
-var im = document.getElementsByClassName("strickimgs");
-
-////Add viewing to matchstick
-//for(var i=0;i<im.length;i++)
-//{
-//  im[i].addEventListener("click",function(e){
-//    e.target.classList.toggle('view');
-//  });
-//}
+draw_equation(8,"+",0,1);
+moves_mode('remove',3);
 
 //Create Images in div
 function divequation(){
@@ -31,19 +23,19 @@ function draw_equation(f,op,s,r)
 	var sec = set_number(s,"sec");
 	var res = set_number(r,"res");
   
-	//first operand
+	//drawing first operand
 	for(i=0;i<first.length;i++)
 	{
 		var image = document.getElementById("img"+first[i]);
 		image.classList.add('view');
 	}
-	//second operand
+	//drawing second operand
 	for(i=0;i<sec.length;i++)
 	{
 		var image = document.getElementById("img"+sec[i]);
 		image.classList.add('view');
 	}
-	//result
+	//drawing result
 	for(i=0;i<res.length;i++)
 	{
 		var image = document.getElementById("img"+res[i]);
@@ -57,9 +49,10 @@ function draw_equation(f,op,s,r)
 		image.setAttribute("class" , "view");
 	}
 
-	//drawing operand
+	//drawing operand - (set class to view [no toggle])
 	var image = document.getElementById("img19");
 	image.setAttribute("class" , "view");
+	//drawing operand +
 	if(op=="+")
 	{
 		var image2 = document.getElementById("img4");
@@ -67,6 +60,72 @@ function draw_equation(f,op,s,r)
 	}
 }
 
+//restrickt player moves
+function moves_mode(mode,num_moves)
+{
+	var im = document.getElementsByClassName("strickimgs");
+	var array = [];
+  switch(mode)
+  {
+    //in add mode restrict removing any stick
+    case "add":
+     for(var i=0;i<im.length;i++)
+     {
+        if(!im[i].classList.contains('view'))
+        {
+          im[i].addEventListener("click",function(e){
+            e.target.classList.toggle('view');
+            restrict_moves(e.target.id,num_moves,array)
+       	  });
+        }
+     }
+      break;
+    //in remove mode restrict adding any stick
+    case "remove":
+    for(var i=0;i<im.length;i++)
+    {
+      if(im[i].classList.contains('view'))
+      {
+      im[i].addEventListener("click",function(e){
+      e.target.classList.toggle('view');
+      restrict_moves(e.target.id,num_moves,array)
+		});
+      }
+    }
+      break;
+  }
+}
+
+//restrict number of moves for the player
+function restrict_moves(id,num_moves,array)
+{
+	var exist;
+	if(num_moves==1)
+		{array.push(id);
+			alert(num_moves);}
+	   if(array.length==0)
+      {array.push(id);}
+  	  else{
+      if(array.length<num_moves)
+      {
+      for(i=0;i<array.length-1;i++)
+      {
+      	if(array[i] == id)
+      		{exist = i;}
+      }
+      if(exist){
+      	array.splice(exist,1);
+      	exist = null;}
+      else
+      	{array.push(id);
+      	if(array.length==num_moves)
+      		{alert(num_moves);}
+      	}
+  		}
+      }
+}
+
+//set IDs for images in the required equation 
 function set_number(num,pos){
 	var temp = [];
 	switch(pos)
@@ -114,39 +173,3 @@ function set_number(num,pos){
 			console.log("error getting IDs for number " +num+ "in " +pos);
 	}
 }
-
-
-//restrickt player moves
-function display_mode(mode)
-{
-  switch(mode)
-  {
-    //in add mode restrict removing any stick
-    case "add":
-     for(var i=0;i<im.length;i++)
-     {
-        if(!im[i].classList.contains('view'))
-        {
-          im[i].addEventListener("click",function(e){
-            e.target.classList.toggle('view');
-       });
-        }
-     }
-      break;
-    //in remove mode restrict adding any stick
-    case "remove":
-    for(var i=0;i<im.length;i++)
-    {
-      if(im[i].classList.contains('view'))
-      {
-      im[i].addEventListener("click",function(e){
-      e.target.classList.toggle('view');
-      });
-      }
-    }
-      break;
-  }
-}
-
-//display_mode('remove');
-
