@@ -1,8 +1,3 @@
-
-  
-
-  
-
 var timerVar = setInterval(countTimer, 1000);
 var totalSeconds = -1;
 function countTimer() {
@@ -20,4 +15,3 @@ function reloading() {
 }
     
  countTimer();
-

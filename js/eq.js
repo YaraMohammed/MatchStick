@@ -1,7 +1,8 @@
 divequation();
-draw_equation(8,"+",0,1);
+draw_equation(8,"+",0,9);
 moves_mode('remove',5);
 
+console.log(equations);
 //Create Images in div
 function divequation(){
 var div = document.getElementById("divequation");
