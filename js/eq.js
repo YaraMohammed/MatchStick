@@ -1,8 +1,9 @@
 divequation();
-draw_equation(8,"+",0,9);
-moves_mode('remove',5);
+eq_num=4; //get from localStorage
+draw_equation(equations[eq_num].first,equations[eq_num].op,equations[eq_num].sec,equations[eq_num].res);
+moves_mode(equations[eq_num].mode,equations[eq_num].sol.length);
 
-console.log(equations);
+//console.log(equations[1].sol);
 //Create Images in div
 function divequation(){
 var div = document.getElementById("divequation");
@@ -61,7 +62,7 @@ function draw_equation(f,op,s,r)
 	}
 }
 
-//restrickt player moves
+//restrict player moves
 function moves_mode(mode,num_moves)
 {
 	var im = document.getElementsByClassName("strickimgs");
@@ -97,13 +98,37 @@ function moves_mode(mode,num_moves)
   }
 }
 
+
+function check(array)
+{
+ var tries=[];
+    flag=true;
+        for (i = 0; i <equations[eq_num].sol.length; i++) {           
+		var solution = equations[eq_num].sol[i];
+		//compare sol and array 
+             for (j = 0; j <array.length; j++) 
+                 {
+                     	if(solution == array[j]) 
+                           { tries.push(true);}
+                 }
+            }
+ if(tries.length!=array.length)
+     {
+         flag=false;
+     }
+ else if(tries.length==array.length)
+     flag=true;
+ alert(flag);
+    return flag;
+}
+
 //restrict number of moves for the player
 function restrict_moves(id,num_moves,array)
 {
 	var exist;
 	if(num_moves==1)
 		{array.push(id);
-			alert(num_moves);}
+			check(array);}
 	   if(array.length==0)
       {array.push(id);}
   	  else{
@@ -121,7 +146,7 @@ function restrict_moves(id,num_moves,array)
       else
       	{array.push(id);
       	if(array.length==num_moves)
-      		{alert(num_moves);}
+      		{check(array);}
       	}
   		}
       }
