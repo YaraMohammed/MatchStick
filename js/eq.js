@@ -1,6 +1,6 @@
 divequation();
 draw_equation(8,"+",0,1);
-moves_mode('remove',3);
+moves_mode('remove',5);
 
 //Create Images in div
 function divequation(){
@@ -108,14 +108,15 @@ function restrict_moves(id,num_moves,array)
   	  else{
       if(array.length<num_moves)
       {
-      for(i=0;i<array.length-1;i++)
+      for(i=0;i<array.length;i++)
       {
       	if(array[i] == id)
       		{exist = i;}
       }
       if(exist){
       	array.splice(exist,1);
-      	exist = null;}
+      	exist = null;
+     }
       else
       	{array.push(id);
       	if(array.length==num_moves)
