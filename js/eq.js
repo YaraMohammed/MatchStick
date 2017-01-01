@@ -1,7 +1,8 @@
 divequation();
-eq_num=4; //get from localStorage
+eq_num = sessionStorage.getItem("eq_no");
 draw_equation(equations[eq_num].first,equations[eq_num].op,equations[eq_num].sec,equations[eq_num].res);
 moves_mode(equations[eq_num].mode,equations[eq_num].sol.length);
+var time = 0;
 
 //console.log(equations[1].sol);
 //Create Images in div
@@ -118,17 +119,31 @@ function check(array)
      }
  else if(tries.length==array.length)
      flag=true;
- alert(flag);
+ alert(flag); 
+    var win = sessionStorage.getItem("win_3");
+    if(win<3){
+    if (flag == true)
+        {
+            win++;
+            sessionStorage.win_3 = win ;
+        }
+    else
+    {sessionStorage.setItem("win_3" , 0);}
+    }
     return flag;
 }
 
 //restrict number of moves for the player
 function restrict_moves(id,num_moves,array)
 {
+    var check_flag;
 	var exist;
 	if(num_moves==1)
-		{array.push(id);
-			check(array);}
+		{   array.push(id);
+            time = totalSeconds;
+			check_flag = check(array);
+        //call pass_or_fail_msg(check_flag,time);
+        }
 	   if(array.length==0)
       {array.push(id);}
   	  else{
@@ -146,7 +161,10 @@ function restrict_moves(id,num_moves,array)
       else
       	{array.push(id);
       	if(array.length==num_moves)
-      		{check(array);}
+      		{time = totalSeconds ;
+              check_flag = check(array);
+             //call pass_or_fail_msg(check_flag,time);
+            }
       	}
   		}
       }
