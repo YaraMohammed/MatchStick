@@ -1,3 +1,4 @@
+
 var timerVar = setInterval(countTimer, 1000);
 var totalSeconds = -1;
 function countTimer() {
@@ -11,7 +12,24 @@ function countTimer() {
     
 function reloading() {
     location.reload();
-    
 }
+
+function checkVoice() 
+     {
+     	
+           var voice =sessionStorage.getItem("voice");
+             var vid = document.getElementById("myVideo");
+           if(voice=="soundON")
+           {
+           	vid.muted = false;
+           }
+           else
+            {
+                vid.muted =true;
+            }     	
+     	
+     }
     
  countTimer();
+changeImages();
+checkVoice();

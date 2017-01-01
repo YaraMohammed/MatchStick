@@ -1,6 +1,8 @@
 divequation();
 eq_num = sessionStorage.getItem("eq_no");
 draw_equation(equations[eq_num].first,equations[eq_num].op,equations[eq_num].sec,equations[eq_num].res);
+hint = document.getElementById("hint");
+hint.innerHTML= equations[eq_num].mode + " " + equations[eq_num].sol.length + " Sticks" ;
 moves_mode(equations[eq_num].mode,equations[eq_num].sol.length);
 var time = 0;
 
@@ -91,7 +93,7 @@ function moves_mode(mode,num_moves)
       {
       im[i].addEventListener("click",function(e){
       e.target.classList.toggle('view');
-      restrict_moves(e.target.id,num_moves,array)
+      restrict_moves(e.target.id,num_moves,array);
 		});
       }
     }
@@ -119,7 +121,6 @@ function check(array)
      }
  else if(tries.length==array.length)
      flag=true;
- alert(flag); 
     var win = sessionStorage.getItem("win_3");
     if(win<3){
     if (flag == true)
@@ -142,30 +143,32 @@ function restrict_moves(id,num_moves,array)
 		{   array.push(id);
             time = totalSeconds;
 			check_flag = check(array);
-        //call pass_or_fail_msg(check_flag,time);
+        pass_or_fail_msg(check_flag,time);
         }
 	   if(array.length==0)
       {array.push(id);}
   	  else{
       if(array.length<num_moves)
       {
-      for(i=0;i<array.length;i++)
-      {
-      	if(array[i] == id)
-      		{exist = i;}
-      }
-      if(exist){
-      	array.splice(exist,1);
-      	exist = null;
-     }
-      else
-      	{array.push(id);
-      	if(array.length==num_moves)
-      		{time = totalSeconds ;
-              check_flag = check(array);
-             //call pass_or_fail_msg(check_flag,time);
-            }
-      	}
+        for(i=0;i<array.length;i++)
+        {
+          if(array[i] == id)
+              {
+                  exist = i;
+              }
+        }
+        if(exist!=null){
+          array.splice(exist,1);
+          exist = null;
+       }
+        else
+          {array.push(id);
+          if(array.length==num_moves)
+              {time = totalSeconds ;
+                check_flag = check(array);
+               pass_or_fail_msg(check_flag,time);
+              }
+          }
   		}
       }
 }
@@ -177,7 +180,7 @@ function set_number(num,pos){
 	{
 		case 'first':
 			if(num==0){temp = [0,1,2,3,17,18];}
-			else if(num==1){temp = [0,1];}
+			else if(num==1){temp = [2,3];}
 			else if(num==2){temp = [1,2,16,17,18];}
 			else if(num==3){temp = [2,3,16,17,18];}
 			else if(num==4){temp = [0,2,3,16];}
@@ -190,7 +193,7 @@ function set_number(num,pos){
 				break;
 		case "sec":
 			if(num==0){temp = [5,6,7,8,21,22]}
-			else if(num==1){temp = [5,6]}
+			else if(num==1){temp = [7,8]}
 			else if(num==2){temp = [6,7,20,21,22]}
 			else if(num==3){temp = [7,8,20,21,22];}
 			else if(num==4){temp = [5,7,8,20];}
@@ -203,7 +206,7 @@ function set_number(num,pos){
 				break;
 		case "res":
 			if(num==0){temp = [9,10,11,12,26,27]}
-			else if(num==1){temp = [9,10]}
+			else if(num==1){temp = [11,12]}
 			else if(num==2){temp = [10,11,25,26,27]}
 			else if(num==3){temp = [11,12,25,26,27];}
 			else if(num==4){temp = [9,11,12,25];}

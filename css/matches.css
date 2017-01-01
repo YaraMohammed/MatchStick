@@ -7,11 +7,10 @@
   opacity:1 !important;
   position: absolute;
 }
-div{
+#divequation{
   position: absolute;
   left:10%;
   top:20%;
-    border: 1;
 }
 #img0{
   left: 121px;
