@@ -29,6 +29,7 @@ function reloading() {
                 vid.muted =false;
             }     	
      	
-     }ountTimer();
+     }
+countTimer();
 changeImages();
 checkVoice();
