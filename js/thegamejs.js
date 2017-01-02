@@ -14,21 +14,21 @@ function reloading() {
     location.reload();
 }
 
-function checkVoice() 
+ function checkVoice() 
      {
      	
-           var voice =sessionStorage.getItem("voice");
+           var voice =sessionStorage.getItem("sound");
              var vid = document.getElementById("myVideo");
-           if(voice=="soundON")
+             console.log(voice);
+           if(voice=="soundOff")
            {
-           	vid.muted = false;
+           	vid.muted = true;
            }
            else
             {
-                vid.muted =true;
+                vid.muted =false;
             }     	
      	
-     }
- countTimer();
+     }ountTimer();
 changeImages();
 checkVoice();
