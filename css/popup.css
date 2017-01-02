@@ -22,10 +22,12 @@
     border: 1px solid #888;
     width: 50%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 10px 10px 5px #888888; 
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
+	border-radius: 36px;
 }
 
 /* Add Animation */
@@ -59,6 +61,7 @@
     background-color: #5cb85c;
     color: white;
     height: 70px;
+    border-radius: 52px;
 }
 img.modal-header{
     width: 90px;
@@ -66,7 +69,7 @@ img.modal-header{
     display: inline-block;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {padding: 2px 16px; }
 
 img.modal-body{
     padding-left: 247px;
@@ -75,6 +78,7 @@ img.modal-body{
     padding: 6px 16px;
     background-color: #5cb85c;
     color: white;
+    border-radius: 34px;
 }
 img.modal-footer{
     display:inline-block;
@@ -82,9 +86,6 @@ img.modal-footer{
     top:10px;
 }
 
-.reload{
-        /*background-image:url("images/reload.png");*/
-        }
 #cont{
     padding-left: 408px;
 }

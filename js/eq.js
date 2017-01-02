@@ -1,10 +1,10 @@
 divequation();
 eq_num = sessionStorage.getItem("eq_no");
 draw_equation(equations[eq_num].first,equations[eq_num].op,equations[eq_num].sec,equations[eq_num].res);
-hint = document.getElementById("hint");
-hint.innerHTML= equations[eq_num].mode + " " + equations[eq_num].sol.length + " Sticks" ;
 moves_mode(equations[eq_num].mode,equations[eq_num].sol.length);
-var time = 0;
+var time = 0;;
+var hint = document.getElementById("player-name");
+hint.innerHTML += "\t" + equations[eq_num].mode + " " + equations[eq_num].sol.length
 
 //console.log(equations[1].sol);
 //Create Images in div

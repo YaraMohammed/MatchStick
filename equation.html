@@ -10,10 +10,10 @@
 <body background="images/greenbackground.jpg">
     <div class="topleft">
       <img  id ="player-img" src="images/characters/mike-levels/mike-level2.ico" alt="Norway" width="100" height="100">
-      <p id="player-name">player name</p>
-      <p id="hint"></p>
+      <p id="player-name" class="text">player name</p> 
     </div>
     
+
     <div class="topright">
       <img  id ="levels-img" src="images/levels/level1.png" alt="Norway" width="100" height="100">
     </div>  
@@ -22,7 +22,7 @@
     
   <div class="topcenter" >
       <img  id ="time-img" src="images/time.png" alt="Norway" width="100" height="100">
-    <p id="timer">0:0:0</p>
+    <p id="timer" class="text">0:0:0</p>
      <form  id="reload" onclick="reloading();">
         <input type="image" src="images/reload.png" alt="Submit">
     </form>
@@ -48,17 +48,18 @@
   </div>
 
 </div>
-<script src="js/equations.js"></script>
-<script src="js/changeimg.js"></script>
-<script src="js/thegamejs.js"></script>
-<script src="js/popup.js"></script>
-<script src="js/eq.js"></script>
 <div   id='sound_button' >
     <!--<img  src="images/soundOn2.png"   id="soundImg">-->
     <audio autoplay="autoplay" loop id="myVideo">
       <source src="sounds/bgsound2.mp3" type="audio/mpeg">
   </div>   
   </audio>
+<script src="js/equations.js"></script>
+<script src="js/changeimg.js"></script>
+<script src="js/thegamejs.js"></script>
+<script src="js/popup.js"></script>
+<script src="js/eq.js"></script>
+
 
   </body>
 </html>

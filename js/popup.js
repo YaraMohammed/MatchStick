@@ -109,7 +109,7 @@ function pass_or_fail_msg(eq_result,eq_time)
         { //Level 3
             mbody.innerHTML+='<img src="images/levels/level3.png" alt="ttt" class="modal-body">';
         }
-        else if(eq_no==9)
+else if(eq_no==9)
         {
           //thanks for playing
             mbody.innerHTML='<img src="images/levels/end.jpg" alt="the end" class="modal-body">';
@@ -117,7 +117,8 @@ function pass_or_fail_msg(eq_result,eq_time)
             //you can close only the window that the script opens
             footer.innerHTML='<a href="startPage.html"><img src="images/levels/menu.png" alt="restart" onclick="sessionStorage.clear();"class="modal-footer"></a>';
         modal.style.display = "block";
-        }
+}
+        
         //build footer
         //footer.innerHTML='<button id="retry" onclick="reloading();" class="reload">Retry</button> <button id="cont" onclick="moveto_nxt();">>></button>';
         if(eq_no <9)

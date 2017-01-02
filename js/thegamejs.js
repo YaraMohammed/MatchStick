@@ -29,7 +29,6 @@ function checkVoice()
             }     	
      	
      }
-    
  countTimer();
 changeImages();
 checkVoice();
