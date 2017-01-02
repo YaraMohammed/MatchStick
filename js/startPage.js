@@ -37,4 +37,4 @@
          
 document.getElementById("startBtn").addEventListener("click",sotreData);         
 
-document.getElementById("sound_button").addEventListener("click",enableMute);
+document.getElementById("soundImg").addEventListener("click",enableMute);
