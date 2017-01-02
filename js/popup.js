@@ -115,7 +115,7 @@ function pass_or_fail_msg(eq_result,eq_time)
             mbody.innerHTML='<img src="images/levels/end.jpg" alt="the end" class="modal-body">';
             // display footer to restart game from beginning
             //you can close only the window that the script opens
-            footer.innerHTML='<a href="startPage.html"><img src="images/menu.png" alt="restart" onclick="sessionStorage.clear();"class="modal-footer"></a>';
+            footer.innerHTML='<a href="startPage.html"><img src="images/levels/menu.png" alt="restart" onclick="sessionStorage.clear();"class="modal-footer"></a>';
         modal.style.display = "block";
         }
         //build footer
